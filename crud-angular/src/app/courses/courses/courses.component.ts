@@ -42,6 +42,7 @@ export class CoursesComponent implements OnInit {
       data: errorMassage
     });
   }
+  
 
   ngOnInit(): void {
   }
