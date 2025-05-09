@@ -5,9 +5,9 @@ import { CourseFormComponent } from './containers/course-form/course-form.compon
 import { CourseResolver } from './guards/course.resolver';
 
 const routes: Routes = [
-  { path: '', component: CoursesComponent },
+  { path: '', component: CoursesComponent },  
   { path: 'new', component: CourseFormComponent, resolve: { course: CourseResolver }},
-  { path: 'edit/:id', component: CourseFormComponent, resolve: { ourse: CourseResolver }}
+  { path: 'edit/:id', component: CourseFormComponent, resolve: { course: CourseResolver }}
 ];
 
 @NgModule({
