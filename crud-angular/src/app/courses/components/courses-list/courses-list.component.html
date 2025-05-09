@@ -23,9 +23,9 @@
         <mat-icon (click)="onAdd()">add</mat-icon>
       </button>
     </mat-header-cell>
-    <mat-cell *matCellDef="courses" class="action-column">
+    <mat-cell *matCellDef="let courses" class="action-column">
       <button mat-icon-button aria-label="Editar curso" color="primary">
-        <mat-icon>edit</mat-icon>
+        <mat-icon (click)="onEdit(courses)">edit</mat-icon>
       </button>
 
       <button mat-icon-button aria-label="Remover curso" color="warn">
