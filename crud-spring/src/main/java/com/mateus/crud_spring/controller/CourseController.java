@@ -38,13 +38,23 @@ public class CourseController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Course> updade(@PathVariable Long id, @RequestBody Course coure) {
+    public ResponseEntity<Course> updade(@PathVariable Long id, @RequestBody Course course) {
         return this.courseRepository.findById(id)
                 .map(result -> {
-                    result.setName(coure.getName());
-                    result.setCategory(coure.getCategory());
+                    result.setName(course.getName());
+                    result.setCategory(course.getCategory());
                     Course updated = this.courseRepository.save(result);
                     return ResponseEntity.ok().body(updated);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> delete(@PathVariable Long id) {
+        return this.courseRepository.findById(id)
+                .map(result -> {
+                    this.courseRepository.deleteById(id);
+                    return ResponseEntity.noContent().build();
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
