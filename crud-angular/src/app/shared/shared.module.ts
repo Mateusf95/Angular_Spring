@@ -3,12 +3,15 @@ import { CommonModule } from '@angular/common';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { CategoryPipe } from './pipes/category.pipe';
+import { ConfigurableFocusTrap } from '@angular/cdk/a11y';
+import { ConfirmationDialogComponent } from '../courses/components/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
   declarations: [
     ErrorDialogComponent,
-    CategoryPipe
+    CategoryPipe,
+    ConfirmationDialogComponent
   ],
   imports: [
     AppMaterialModule,
@@ -16,6 +19,7 @@ import { CategoryPipe } from './pipes/category.pipe';
   ],
   exports: [
     ErrorDialogComponent,
+    ConfirmationDialogComponent,
     CategoryPipe
   ]
 })
